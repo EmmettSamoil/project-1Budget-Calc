@@ -1,0 +1,28 @@
+hr {
+    height: 50px;
+     background-color:aqua;
+    padding:0;
+}
+
+body {
+    margin: 0px;
+}
+
+.mainH1{
+    text-align: center;
+    font-style: italic;
+}
+
+.calcArea {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.bigtext {
+    font-size: larger;
+}
+
+.piechart {
+    text-align:center;
+}

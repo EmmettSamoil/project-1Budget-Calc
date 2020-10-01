@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Monthly Budget Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 class=mainH1>Monthly Budget Calculator</h1>
+    <hr>
+    <div class='calcArea'>
+        <p class='bigtext'>In life we have many stresses which impact our daily lives.
+            And for adults one of the hardest things is balancing a budge.
+            No one likes pulling out pen, paper, and a calculator to try and figure out
+            if they will be able to make ends meet that month.
+        </p>
+
+        <h2>Please Calculate your Monthly Income:</h2>
+        <h2>Annual Salary (Which we will divide by 12)</h2>
+        <p>Add your own Income:<input></p>
+
+        <p>Please enter Your Monthly Expenses:</p>
+        <p>Housing: <input id='housing'></p>
+        <p>Food: <input id='food'></p>
+        <p>Electrcity: <input id='electricity'></p>
+        <p>Heating: <input id='heating'></p>
+        <p>Water: <input id='water'></p>
+        <p>Entertainment(Cable, netflix): <input id='entertainment'></p>
+        <p>Aditional Expenses Name:<input id='addExpenseName'> Cost:<input id='addCost'> </p>
+
+        <p><button id='calc' onclick="drawChart()">Calculate</button></p>
+
+        <div id="piechart"></div>
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src='main.js'></script>
+</body>
+
+</html>

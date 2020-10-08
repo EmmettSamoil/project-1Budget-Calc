@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+    
     <h1 class=mainH1>Monthly Budget Calculator</h1>
     <hr>
     <div class='calcArea'>
@@ -18,10 +18,11 @@
         </p>
 
         <h2>Please Calculate your Monthly Income:</h2>
-        <h2>Annual Salary (Which we will divide by 12)</h2>
-        <p>Add your own Income:<input></p>
+        <h3>Annual Salary (Which we will divide by 12)</h3>
+        <p><input id='anIncome'></p>
+       <p id='salParg'></p> 
 
-        <p>Please enter Your Monthly Expenses:</p>
+        <h3>Please enter Your Monthly Expenses:</h3>
         <p>Housing: <input id='housing'></p>
         <p>Food: <input id='food'></p>
         <p>Electrcity: <input id='electricity'></p>
@@ -29,11 +30,13 @@
         <p>Water: <input id='water'></p>
         <p>Entertainment(Cable, netflix): <input id='entertainment'></p>
         <p>Aditional Expenses Name:<input id='addExpenseName'> Cost:<input id='addCost'> </p>
+        <p id='outputParg'></p>
 
-        <p><button id='calc' onclick="drawChart()">Calculate</button></p>
+        <p><button id='calc'>Calculate</button></p>
 
         <div id="piechart"></div>
     </div>
+    <script type="text/javascript" src="ezFunctionLib.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src='main.js'></script>
 </body>

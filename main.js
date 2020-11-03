@@ -20,34 +20,50 @@ function monthSal () {
 document.getElementById('salParg').innerHTML = 'Every month you earn ' + monSal.toFixed(2) + '$';
 }
 
-//Calculate Montly expendtures
+//Calculate Montly expendetures
 function monthExp (){
   let monExp = 0;
-  if (document.getElementById('housing').value > 0){
-    monExp + parseInt(document.getElementById('housing').value);
+  if (getElNum('housing') > 0){
+    monExp += getElNum('housing');
+  } 
+  if (getElNum('food') > 0) {
+    monExp += getElNum('food');
   }
-  console.log(monExp)
+  if (getElNum('electricity') > 0) {
+    monExp += getElNum('electricity');
+  }
+  if (getElNum('heating') > 0) {
+    monExp += getElNum('heating');
+  }
+  if (getElNum('water') > 0){
+    monExp += getElNum('water');
+  }
+  if (getElNum('entertainment') > 0){
+    monExp += getElNum('entertainment');
+  }
+  if (getElNum('addCost') > 0){
+    monExp += getElNum('addCost');
+  }
+  console.log(monExp);
+  return monExp
 }
 
-function getElNum(id) {
-  parseInt(document.getElementById(id).value);
-}
 
 // Draw the chart and set the chart values
 function calcFunc() {
   // let h1 = parseInt(document.getElementById('housing').value);
   let h1 = getElNum('housing');
-  let f1 = parseInt(document.getElementById('food').value);
-  let e1 = parseInt(document.getElementById('electricity').value);
-  let h2 = parseInt(document.getElementById('heating').value);
-  let w1 = parseInt(document.getElementById('water').value);
-  let e2 = parseInt(document.getElementById('entertainment').value);
-  let addCost = parseInt(document.getElementById('addCost').value)
-  let addExp = document.getElementById('addExpenseName').value;
-  salary = document.getElementById('anIncome').value;
+  let f1 = getElNum('food');
+  let e1 = getElNum('electricity');
+  let h2 = getElNum('heating');
+  let w1 = getElNum('water');
+  let e2 = getElNum('entertainment');
+  let addCost = getElNum('addCost');
+  let addExp = getEl('addExpenseName');
+  salary = getEl('anIncome');
   monSal = salary / 12 ;
-  let monExp = h1 + f1 + e1 + h2 + w1 + e2 + addCost;
-  // monthExp();
+  // let monExp = h1 + f1 + e1 + h2 + w1 + e2 + addCost;
+  let monExp = monthExp();
   let savings = (monSal - monExp);
   
   var data = google.visualization.arrayToDataTable([
@@ -60,8 +76,6 @@ function calcFunc() {
     ['Entertainment', e2],
     [addExp, addCost]
   ]);
-
-  console.log(h1);
 
   // Optional; add a title and set the width and height of the chart
   var options = {

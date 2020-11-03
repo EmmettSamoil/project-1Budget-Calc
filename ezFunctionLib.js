@@ -2,11 +2,19 @@
 // <script type="text/javascript" src="ezFunctionLib.js"></script>
 
 //Get by ID functions
+
+//Get number from ID / ID must be a string
 function getElNum(ID) {
-    parseInt(document.getElementById(ID).value);
+    return parseInt(document.getElementById(ID).value);
 }
 
-function getElString(ID) {
-    document.getElementById(ID).innerHTML;
+//Get Text from ID / ID must be a string
+function getElText(ID) {
+    return document.getElementById(ID).innerHTML;
+}
+
+//Get Element from ID / ID must be a string
+function getEl(ID) {
+    return document.getElementById(ID).value;
 }
 
